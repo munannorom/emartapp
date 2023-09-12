@@ -1,7 +1,8 @@
 FROM node:14 AS ui-build
 WORKDIR /usr/src/app
 COPY client/ ./client/
-RUN cd client && npm install && npm run build
+RUN cd client && npm install 
+RUN npm run build
 
 FROM node:14 AS server-build
 WORKDIR /usr/src/app
